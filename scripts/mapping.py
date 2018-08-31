@@ -26,7 +26,7 @@ class Map311():
         data = [total]
         return py.iplot(data, filename=name_str)
 
-    def pie_chart(self, data_frame,search_str):   
+    def pie_chart(self, data_frame,search_str):
         search_values = data_frame[search_str].value_counts()[:10]
         labels , values = search_values.index , search_values.values
         trace = go.Pie(labels=labels, values=values)

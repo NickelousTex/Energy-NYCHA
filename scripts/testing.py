@@ -1,9 +1,14 @@
-''' Take the most recent data from NYC 311 Open Data, and return all cases: '''
+'''
+Class created for testing new data against given model
+'''
 from sodapy import Socrata
 import pandas as pd
 import os
 import json
-class DataCleaner:
+from datetime import datetime, timedelta
+
+class Testing():
+
     def __init__(self):
          # Domain , SODA API
         self.database_311 = "fhrw-4uyv"
@@ -29,31 +34,37 @@ class DataCleaner:
        '01 MANHATTAN'])
         pass
 
-    def get_data(self, date, limit=100000): #formated date should be year-month-day as string
+    def get_data(self, limit=1000):
         '''
-        pulls only the 100k most recent calls from inputed date from NYC 311
+        pulls the most recent 1k 311 calls from NYC open data
         '''
-        formated_date = '{}T00:00:00.000'.format(date)
-        query = "created_date > '{}' ".format(formated_date)
+        time = datetime.utcnow()-timedelta(days=1)
+        time_string = '{}-{}-{}T00:00:00.000'.format(time.year,time.month,time.day)
+        query = "created_date > '{}' ".format(time_string)
         results = self.client.get(self.database_311, select=self.select_sql, where=query, limit=limit)
         self.data_frame = pd.DataFrame.from_records(results)
-    def clean_data(self):
-        self.data_frame.dropna(subset=['closed_date','descriptor','latitude',
-                                'longitude'], inplace=True)
-        self.data_frame['latitude'] =(
-        self.data_frame['latitude'].astype('float64')
-        )
-        self.data_frame['longitude'] =( self.data_frame['longitude'].astype('float64')
-        )
-        self.data_frame['created_date'] = pd.to_datetime(self.data_frame['created_date'])
-        self.data_frame['closed_date'] = pd.to_datetime(self.data_frame['closed_date'])
-        #Create time till resolution
-        self.data_frame['time_till_resolution'] = self.data_frame['created_date'] - self.data_frame['closed_date']
-
-        self.data_frame['time_till_resolution'] =(-round(
-                                    self.data_frame['time_till_resolution'].astype(
-                                    'timedelta64[s]')/3600,2))
         return self.data_frame
+    def clean_data(self):
+        '''
+        Cleans data to be processed against pickle data setting unique id as index
+        '''
+        self.data_frame = self.data_frame[self.data_frame['status'] != 'Closed']
+        self.data_frame['created_date'] = pd.to_datetime(self.data_frame['created_date'])
 
+        #Ensure community boards are good
+        self.data_frame = self.data_frame[self.data_frame['community_board'].isin(self.community_board_list)]
+        #get date dummies
+        self.data_frame['created_date_year'] = self.data_frame['created_date'].dt.year
+        self.data_frame['created_date_month'] = self.data_frame['created_date'].dt.month
+        self.data_frame['created_date_day'] = self.data_frame['created_date'].dt.day
+        self.data_frame['created_date_hour'] = self.data_frame['created_date'].dt.hour
+        self.data_frame['created_date_day_of_week'] = self.data_frame['created_date'].dt.dayofweek
+        #Drop status & lat/long
+        self.data_frame.drop(['status','latitude','longitude','created_date','closed_date'], axis=1 , inplace=True)
+
+        #get rest of dummies
+        self.data_frame = .get_dummies(self.data_frame, columns=['agency','borough','community_board',
+                'complaint_type','descriptor','open_data_channel_type'])
+        return self.data_frame
 if __name__ == '__main__':
     print ('This program is being run by itself')
