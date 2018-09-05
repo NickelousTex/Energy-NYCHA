@@ -6,15 +6,24 @@ import pandas as pd
 import os
 import json
 from datetime import datetime, timedelta
+<<<<<<< HEAD
 from sklearn.externals import joblib
 class PredictionsTable():
+=======
+
+class Testing():
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
 
     def __init__(self):
          # Domain , SODA API
         self.database_311 = "fhrw-4uyv"
         self.client = Socrata('data.cityofnewyork.us', 'tvPeTjPatFwjuelfpMNb0G8WH')
         #Save memory initiall by quirying only that what is need:
+<<<<<<< HEAD
         self.select_sql = "unique_key,agency,borough,closed_date,community_board,complaint_type,created_date,descriptor,open_data_channel_type,status,longitude,latitude"
+=======
+        self.select_sql = "agency,borough,closed_date,community_board,complaint_type,created_date,descriptor,open_data_channel_type,status,longitude,latitude"
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
 
         self.community_board_list = set(['06 BRONX', '01 BRONX', '14 QUEENS', '13 QUEENS',
         '13 BROOKLYN', '09 BROOKLYN', '10 QUEENS',
@@ -34,7 +43,10 @@ class PredictionsTable():
        '01 MANHATTAN'])
         pass
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
     def get_data(self, limit=1000):
         '''
         pulls the most recent 1k 311 calls from NYC open data
@@ -44,25 +56,35 @@ class PredictionsTable():
         query = "created_date > '{}' ".format(time_string)
         results = self.client.get(self.database_311, select=self.select_sql, where=query, limit=limit)
         self.data_frame = pd.DataFrame.from_records(results)
+<<<<<<< HEAD
 
 
         pass
 
+=======
+        return self.data_frame
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
     def clean_data(self):
         '''
         Cleans data to be processed against pickle data setting unique id as index
         '''
+<<<<<<< HEAD
 
+=======
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
         self.data_frame = self.data_frame[self.data_frame['status'] != 'Closed']
         self.data_frame['created_date'] = pd.to_datetime(self.data_frame['created_date'])
 
         #Ensure community boards are good
         self.data_frame = self.data_frame[self.data_frame['community_board'].isin(self.community_board_list)]
+<<<<<<< HEAD
 
         #copy needed for later return
         self.data_frame.set_index('unique_key')
         self.predictions_data_frame = self.data_frame.copy()
 
+=======
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
         #get date dummies
         self.data_frame['created_date_year'] = self.data_frame['created_date'].dt.year
         self.data_frame['created_date_month'] = self.data_frame['created_date'].dt.month
@@ -71,6 +93,7 @@ class PredictionsTable():
         self.data_frame['created_date_day_of_week'] = self.data_frame['created_date'].dt.dayofweek
         #Drop status & lat/long
         self.data_frame.drop(['status','latitude','longitude','created_date','closed_date'], axis=1 , inplace=True)
+<<<<<<< HEAD
         #get rest of dummies
         self.data_frame = pd.get_dummies(self.data_frame, columns=['agency','borough','community_board',
                 'complaint_type','descriptor','open_data_channel_type'])
@@ -99,5 +122,12 @@ def drop_cols(df, del_cols):
 
     return df
 
+=======
+
+        #get rest of dummies
+        self.data_frame = .get_dummies(self.data_frame, columns=['agency','borough','community_board',
+                'complaint_type','descriptor','open_data_channel_type'])
+        return self.data_frame
+>>>>>>> a9359cdaf94001589331fc2e6c94f8fa76144ed6
 if __name__ == '__main__':
     print ('This program is being run by itself')
