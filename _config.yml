@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Developer's Note: This is a sample _config.yml file offered with
 # jekyll-theme-prologue for your convenience. To use it, move it to your
 # project's root directory. Please note that the following lines are
@@ -61,3 +62,6 @@ google_analytics:
 # The following settings are NECESSARY for the Prologue theme to run:
 theme: jekyll-theme-prologue
 collections: [sections]
+=======
+theme: jekyll-theme-cayman
+>>>>>>> 5541281815dd9583d20394de768947391c747e97
