@@ -1,0 +1,18 @@
+# Setup
+title:        311 NYC
+tagline:      Regression Predictions on NYC311 Data
+baseurl:      ""
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       Nick Teixeira
+  url:        https://www.linkedin.com/in/nickeloustex/ 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
