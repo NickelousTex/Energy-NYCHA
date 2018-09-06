@@ -1,7 +1,7 @@
 # Setup
 title:        311 NYC
 tagline:      Regression Predictions on NYC311 Data
-baseurl:      "/jekyll-cayman-theme"
+baseurl:      ""
 paginate:     1
 locale:       "en"
 
