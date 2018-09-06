@@ -7,6 +7,10 @@ import os
 import json
 from datetime import datetime, timedelta
 from sklearn.externals import joblib
+import sqlite3
+import schedule
+import time
+
 class PredictionsTable():
 
     def __init__(self):
@@ -86,18 +90,89 @@ class PredictionsTable():
 
         return self.predictions_data_frame.drop('closed_date',axis=1)
 
+    def get_actual(self):
+        print('Grabbing Unique_Keys...')
+        engine = sqlite3.connect("../sql_tables/predictions_311.db3")
+        unique_key = engine.execute("SELECT unique_key FROM predictions_311").fetchall()
+        unique_key = tuple([x[0] for x in unique_key])
+        engine.close()
+        print('Done')
+
+        time = datetime.utcnow()-timedelta(days=2)
+        time_string = '{}-{}-{}T00:00:00.000'.format(time.year,time.month,time.day)
+        query = "closed_date > '{}' ".format(time_string)
+        print('Getting Closed Dates...')
+        results = self.client.get(self.database_311, select=self.select_sql, where=query, limit=3000)
+        data_frame = pd.DataFrame.from_records(results)
+        print('Done.')
+        keys = data_frame[data_frame['unique_key'].isin(unique_key)].unique_key.values
+        actual = data_frame[data_frame['unique_key'].isin(unique_key)]
+        print('Getting Actual Close Times...')
+
+        actual.set_index('unique_key',inplace=True)
+        actual.sort_index(inplace=True)
+
+        created = actual['created_date'] = pd.to_datetime(actual['created_date'])
+        closed = actual['closed_date'] = pd.to_datetime(actual['closed_date'])
+
+        actual['Real_Time_To_Close'] = created - closed
+
+        actual['Real_Time_To_Close']= (-round(
+                                    actual['Real_Time_To_Close'].astype(
+                                    'timedelta64[s]')/3600,2))
+
+
+        print('Done')
+        print('Finding Closed Dates from Predections SQL')
+        sql_query = "SELECT * FROM predictions_311 WHERE unique_key IN {}".format(tuple(keys))
+        connect=sqlite3.connect("../sql_tables/predictions_311.db3")
+        predicted = pd.read_sql_query(sql=sql_query, con=connect)
+
+        predicted.set_index('unique_key', inplace=True)
+        predicted.sort_index(inplace=True)
+        print('Done')
+        predicted['Actual_Time'] = actual['Real_Time_To_Close']
+        connect.close()
+        return predicted
+
 def drop_cols(df, del_cols):
     '''Drop columns not in data frame and reshape with dummy cols to achive correct shape '''
 
     for col in (set(df.columns) - del_cols):
         df.drop([col], axis=1,inplace=True)
 
-    length_missing_cols = (df.shape[1] - 958) #hardcoded to model
+    length_missing_cols = (df.shape[1] - 935) #hardcoded to model
 
     for i in range(-length_missing_cols):
         df['{}'.format(i)]= 0
 
     return df
+def save_to_table(database, data_frame):
+    engine = sqlite3.connect("../sql_tables/{}.db3".format(database))
+    data_frame.to_sql('{}'.format(database), con=engine, if_exists='append')
 
+    engine.close()
+    pass
+def sql_jobs():
+    print('Getting predictions...')
+    predictions = PredictionsTable()
+    predictions.get_data()
+    predictions.clean_data()
+    predictions_dataframe = predictions.predict()
+    print('Saving Predictions to SQL Table...')
+    save_to_table('predictions_311', predictions_dataframe)
+
+    print('Finding Actual Results ...')
+    actual_times= PredictionsTable()
+    results_dataframe = actual_times.get_actual()
+
+    print('Saving Results to SQL Table')
+    save_to_table('results_311', results_dataframe)
+    pass
 if __name__ == '__main__':
-    print ('This program is being run by itself')
+        schedule.every(.5).hours.do(sql_jobs) #Change this for EC2 instance
+
+
+        while True:
+            schedule.run_pending()
+            time.sleep(1700)
