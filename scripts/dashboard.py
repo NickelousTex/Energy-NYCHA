@@ -12,7 +12,7 @@ from sodapy import Socrata
 import json
 #Plotting Folium
 import folium
-from folium.plugins import MarkerCluster
+from folium.plugins import MarkerCluster, HeatMap
 #Save to S3
 import boto3
 #Schedule
@@ -62,6 +62,8 @@ class ComplaintsDisplay:
         for each in means[0:MAX_Count].iterrows():
             folium.Marker(location = [each[1]['Latitude'],each[1]['Longitude']]).add_to(flag)
 
+        hm = HeatMap([[0,0]])
+        hm.add_to(flag)
         flag.save('../{}_complaints_flagged.html'.format(self.complaint))
 
         pass
@@ -106,8 +108,9 @@ def MappingJobs():
     print('Maps Complete')
 
 if __name__ == '__main__':
-    schedule.every(12).hour.do(MappingJobs)
-
-    while True:
-        schedule.run_pending()
-        time.sleep(14400)
+    # schedule.every(12).hours.do(MappingJobs)
+    #
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(14400)
+    MappingJobs()
