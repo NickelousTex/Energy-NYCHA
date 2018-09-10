@@ -10,9 +10,12 @@ author:
   name:       Nick Teixeira
   url:        https://www.linkedin.com/in/nickeloustex/
 
-# Gems
-gems:
+# Plugins
+plugins:
   - jekyll-paginate
 
 #Others
 markdown: kramdown
+
+#database
+datatable: true
