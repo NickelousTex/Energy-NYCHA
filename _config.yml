@@ -1,7 +1,7 @@
 # Setup
 title:        311 NYC
 tagline:      Regression Predictions on NYC311 Data
-baseurl:      ""
+baseurl:      "/jekyll-cayman-theme"
 paginate:     1
 locale:       "en"
 
@@ -10,9 +10,12 @@ author:
   name:       Nick Teixeira
   url:        https://www.linkedin.com/in/nickeloustex/
 
-# Gems
-gems:
+# Plugins
+plugins:
   - jekyll-paginate
 
 #Others
 markdown: kramdown
+
+#database
+datatable: true

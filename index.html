@@ -6,16 +6,16 @@
   <title>311 NYC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#157878">
-  <link rel="stylesheet" href="/jekyll-cayman-theme-master/css/normalize.css">
+  <link rel="stylesheet" href="css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/jekyll-cayman-theme-master/css/cayman.css">
+  <link rel="stylesheet" href="css/cayman.css">
 </head>
 
   <body>
     <section class="page-header">
-  <h1 class="project-name">311 NYC</h1>
-  <h2 class="project-tagline">Regression Predictions on NYC311 Data</h2>
-  <a href="#" class="btn">View on GitHub</a>
+  <h1 class="project-name">Fix-IT 311</h1>
+  <h2 class="project-tagline">Regression Predictions on NYC 311 Data</h2>
+  <a href="https://github.com/NickelousTex/NYCHA_311_Capstone" class="btn">View on GitHub</a>
 </section>
 <!-Data intro>
     <section class="main-content">
@@ -24,10 +24,22 @@
   <h1>The Data:</h1>
   <ul class="posts">
 
-Welcome to Jekyll!
+    As part of the open data project, New York City post data from a variety of Departments and other Government Entities. This project takes data from the NYC 311 Open Data set and attempts to predict future outcome of complaints.
+<br><br>
+    <b>What is 311?</b>
+    311 was introduced as a non-emergency alternative to 911 in 1996 to help overwhelmed police emergency calls by providing citizens with an alternative three digit call number to voice complaints.
+    311 use in NYC has seen explosive growth since tracking was first introduced in 2003. Growing from approximately 4.5 Million calls in its first year to over 20 million calls per year.
+<br><br>
+    <b>Why look at 311?</b>
+    311 is a unique attempt by governments to be more responsive to their citizens concerns. 311 complaints vary widely from noise complaints to mental health services. Yet many people have never used 311. Often the response is "it won't get fixed anyways, what's the point?"
+<br><br>
+    This project seeks to identify exactly causes a 311 complaint to be responded to faster than another. The project will attempt to predict new 311 calls close time to answer a fundamental question: <b>Can 311 Fix It?</b>
 
   </ul>
 </div>
+<p>
+<img src="images/nycopen.png" style=left;width:180px;height:140px;><img src="images/nyc311.jpg" style=left;width:180px;height:140px;><img src="images/socrata.png" style=left;width:180px;height:140px;>
+</p>
 </section>
 
 <! Data Cleaning:>
@@ -37,8 +49,26 @@ Welcome to Jekyll!
   <h1> Data Mungeing:</h1>
   <ul class="posts">
 
-Welcome to Jekyll!
+    As with most open data sets, there's a lot to explore and look through. With over 18 million rows and 41 features in just the past year, there was a lot to look through and make decisions on. A subset of 100k was worked on initially for cleaning before deploying on the larger data set. What was needed to figure out was-
 
+<br>
+<div>
+<br>
+<h4>How to get this:</h4>
+<img src="images/uncleaned_data.png" style="float: left; height:20px width:46%; margin-right:2%; margin-bottom: 0.5em;">
+</div>
+<h4>To something more useful like this:</h4>
+<img src="images/cleaned_data.png" syle="float: left; width:46%; margin-right:2%; margin-bottom: 0.5em;">
+<p style="clear:both;">
+  We get there by lots of coding! There were plenty of redundant features as well as null and garbage inputs(for full cleaning analysis- see MVP notebook on Github):
+  An Example:
+
+<pre><code>print("Number of Community Boards: {}".format(api_df['community_board'].nunique()))
+Number of Community Boards: 74
+</pre></code>
+<i>There are only 59 community boards in NYC!</i>
+<pre><code>api_df_cleaned = api_df[api_df['community_board'].isin(community_board_list)]
+Number of Community Boards: 59</code></pre>
   </ul>
 </div>
 </section>
@@ -47,18 +77,17 @@ Welcome to Jekyll!
     <section class="main-content">
 
       <div id="home">
-  <h1>Basic Info:</h1>
+  <h1>Early Analyssis:</h1>
   <ul class="posts">
-
-We can see a breakdown of calls by Borough
+We can see a breakdown of calls by Borough, by agency, and by complaint type:
 <div>
-    <a href="https://plot.ly/~nickeloustex/4/?share_key=XbL5jS1S81uSSodFKMFurf" target="_blank" title="basic_pie_chart" style="display: block; text-align: center;"><img src="https://plot.ly/~nickeloustex/4.png?share_key=XbL5jS1S81uSSodFKMFurf" alt="basic_pie_chart" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="nickeloustex:4" sharekey-plotly="XbL5jS1S81uSSodFKMFurf" src="https://plot.ly/embed.js" async></script>
+  <!--undo-->
+<!-- <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:22/embed"></iframe>
 </div>
 <div>
-    <a href="https://plot.ly/~nickeloustex/2/?share_key=ccbE9YFljywjZR8q8OOCa6" target="_blank" title="Top Complaints" style="display: block; text-align: center;"><img src="https://plot.ly/~nickeloustex/2.png?share_key=ccbE9YFljywjZR8q8OOCa6" alt="Top Complaints" style="max-width: 50%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="nickeloustex:2" sharekey-plotly="ccbE9YFljywjZR8q8OOCa6" src="https://plot.ly/embed.js" async></script>
-</div>
+    <a href="https://plot.ly/~nickeloustex/20/?share_key=GY2HJXWzc5rtvlkI1xLVu8" target="_blank" title="histogram" style="display: block; "><img src="https://plot.ly/~nickeloustex/20.png?share_key=GY2HJXWzc5rtvlkI1xLVu8" alt="histogram" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="nickeloustex:20" sharekey-plotly="GY2HJXWzc5rtvlkI1xLVu8" src="https://plot.ly/embed.js" async></script>style=left;width:180px;height:140px;
+</div> -->
 
 
   </ul>
@@ -71,13 +100,27 @@ We can see a breakdown of calls by Borough
       <div id="home">
   <h1>Regression Predicting</h1>
   <ul class="posts">
+    Once data cleaning was completed it was time to find a model to predict estimated time of
+    outcomes.
+    Random Forest & Gradient Boost models were picked because of their robustness to overfitting. A Neural Net was considered but was decided against because the ability to rate feature importance was considered a good education factor. Random Forest and Gradient Boost provided this.
 
 <pre><code>random_forest = RandomForestRegressor()
 random_forest.fit(X_train, y_train)
 print('R2 score {}'.format(random_forest.score(X_test,y_test)))
 R2 score 0.7741774171081134
 </code></pre>
+<img src="images/feature_importance_rf.png" alt=""> <p> Feature importance is helpful because it allows us to make recommendation on specific items that may have a causal effect on outcome. This has to be approached cautiously. Note that NYPD is rated as a high feature importance. This makes sense considering that NYPD handles the largest share of complaints. By their nature as well, NYPD complaints also tend to be closed faster, as opposed to an inquiry about taxes made to Department of Finance.
 
+</p>
+<p>
+<pre><code>gradient_boost = GradientBoostingRegressor()
+gradient_boost.fit(X_train, y_train)
+print('R2 score {}'.format(gradient_boost.score(X_test,y_test)))
+R2 score 0.7141774171081134
+</code></pre>
+<img src="images/feature_importance_gb.png" alt="">
+</p>
+We can also compare feature importance by model. Note that many of the same features show up in both.
   </ul>
 </div>
 </section>
@@ -88,16 +131,16 @@ R2 score 0.7741774171081134
       <div id="home">
   <h1>Current Predictions:</h1>
   <ul class="posts">
+Predictions are generated every morning at 2:30 in the morning via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
+<br>
+<h2>Today's predictions</h2>
+<iframe width="900" height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
+<h2>Current Comparision Results:</h2>
+<iframe width="900" height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
+<br>
+<h2>Results:</h2>
+As you can see results can be hours off, while R*2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
 
-Welcome to Jekyll!
- <button type="button">Click Me!</button>
-
-<div class="dropdown">
- <div id="myDropdown" class="dropdown-content">
-   <a href="../docs/Homeless_complaints_flagged.html">Homeless Complaints</a>
-   <a href="#">Noise Complaints</a>
-   <a href="#">Rodent Complaints</a>
-   <a href="#">Bulk Pickup</a>
  </div>
 </div>
 </section>
@@ -108,10 +151,27 @@ Welcome to Jekyll!
       <div id="home">
   <h1>Data Dashboarding:</h1>
   <ul class="posts">
+  <b>There's a problem with trying to visualize large open data sets...</b>
+    <p>
+    <img src="images/crashed_dashboard.png" alt="">
+    </p>
+    It’s hard to do!
+    Visualization on NYC’s OpenData is erratic at best. During the course of this project I never once got it to work. This lead to some contemplation on what might be a better way to display information of interest to the average data seeker.
+    <br><br>
+    With this in mind, I set out to create example dashboards that are updated daily - using SodaPy and querying Open Data’s own information. This gave me an advantage of minimal storage locally, and thus giving me more space to create impactful maps to visualize interesting data.
 
-Rather than vizualize and call all data, we can create dashboards based upon specifically interesting events that occur:
+<!--undo-->
+<!-- <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:10/embed"></iframe> -->
 
-<embed src="../docs/Homeless_complaints_flagged.html" style="width:800px; height: 300px;" align="right">an>
+<br>
+<br>
+<b>These dashboards can be created using SQL calls using the existing API:</b>
+<pre><code>time = datetime.utcnow()-timedelta(days=7)
+time_string = '{}-{}-{}T00:00:00.000'.format(time.year,time.month,time.day)
+query = "created_date > '{}' AND complaint_type LIKE '%Homeless%' ".format(time_string)
+results = client.get(database_311, select=select_sql, where=query, limit=100000)
+</code></pre>
+
 
 </section>
 
@@ -122,7 +182,11 @@ Rather than vizualize and call all data, we can create dashboards based upon spe
   <h1>Findings & Conclusion:</h1>
   <ul class="posts">
 
-Welcome to Jekyll!
+    Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
+    <br><br>
+    311 seems to recognize this and their web app limits their users to 7 specific complaint types. At the same time it directs more specific inquiries to their respective departments.
+    <br><br>
+    Recommendations would still include dealing with the auto close problem. Standardizing complaints down to a core 20-30, or having an “Other” category rather than over 200 descriptors might also be a good way to get more accurate data. It’s also unclear if agencies are responsible or measured by their 311 report performance.
 
   </ul>
 </div>
@@ -135,13 +199,28 @@ Welcome to Jekyll!
   <h1>The Future:</h1>
   <ul class="posts">
 
-Welcome to Jekyll!
+    311 is a great tool to measure complaints and see what concerns New Yorkers. There is a lot of interesting data that can be parsed over. In the course of this project I often found myself getting distracted by something interesting that popped up in the data. It’s no wonder it’s the #1 downloaded data set for NYC Open Data.
+    <br><br>
+    Going forward I will continue to create interesting and unique dashboards on the data. I also will continue to refine my regression model, and create a predictor that takes user input and gives them a time to close & agency responsible (perhaps “Can 311 Fix It” ?)
+    <br><br>
 
+<h3>Here are some tools I used for this project:</h3>
+<img src="images/amazon.png" style=left;width:180px;height:140px;">
+<img src="images/dask.png" style=left;width:180px;height:140px;" >
+<img src="images/plotly.png" style=left;width:180px;height:140px;">
+<img src="images/sklearn.png" style=left;width:180px;height:140px;">
+<img src="images/soda.png" style=left;width:180px;height:140px;">
+<img src="images/spark.png" style=left;width:180px;height:140px;">
+<img src="images/jekyll.png" style=left;width:180px;height:140px;">
+<img src="images/numpy.png" style=left;width:180px;height:140px;">
+<img src="images/sql.png" style=left;width:180px;height:140px;">
+<img src="images/pandas.png" style=left;width:240x;height:140px;">
+<img src="images/leaflet.png" style=left;width:240px;height:140px;">
   </ul>
 </div>
 </section>
     <footer class="site-footer">
-<span class="site-footer-owner"><a href="">311 NYC</a> is maintained by <a href="https://www.linkedin.com/in/nickeloustex/">Nick Teixeira</a>.</span>
+<span class="site-footer-owner"><a href="https://github.com/NickelousTex/NYCHA_311_Capstone">311 NYC</a> is maintained by <a href="https://www.linkedin.com/in/nickeloustex/">Nick Teixeira</a>.</span>
 <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
 </footer>
 
