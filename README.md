@@ -25,8 +25,8 @@ As part of the open data project, New York City post data from a variety of Depa
 <br><br>
     This project seeks to identify exactly causes a 311 complaint to be responded to faster than another. The project will attempt to predict new 311 calls close time to answer a fundamental question: <b>Can 311 Fix It?</b>
 
-All of my code can be found within the [src folder](scripts/) in this repository.
-Notebooks of my progress and analysis can be found in the [src folder](EDA/). 
+All of my code can be found within the [scripts folder](scripts/) in this repository.
+Notebooks of my progress and analysis can be found in the [EDA folder](EDA/). 
 
 
 ## Data Munging 
@@ -58,7 +58,7 @@ Number of Community Boards: 59</code></pre>
 
 ## Early Analysis
 <img src="images/initial_data_dashboard.png" alt=""> 
-
+ <img src="images/histogram.png" alt="">
 
 
 
@@ -116,7 +116,7 @@ As you can see results can be hours off, while R*2 score is still at .77. Scorin
 
 <!--undo-->
 <!-- <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:10/embed"></iframe> -->
-
+    <img src="images/heat_map_dashboard.png" alt="">
 <br>
 <br>
 <b>These dashboards can be created using SQL calls using the existing API:</b>
