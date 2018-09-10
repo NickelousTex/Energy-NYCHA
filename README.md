@@ -68,12 +68,8 @@ Number of Community Boards: 59</code></pre>
 
 ## Regression Modeling 
 
-Once data cleaning was completed it was time to find a model to predict estimated time of
-    outcomes.
+Once data cleaning was completed it was time to find a model to predict estimated time of outcomes.
     Random Forest & Gradient Boost models were picked because of their robustness to overfitting. A Neural Net was considered but was decided against because the ability to rate feature importance was considered a good education factor. Random Forest and Gradient Boost provided this.
-
-<pre><code>random_forest = RandomForestRegressor()
-random_forest.fit(X_train, y_train)
 
 <pre><code>random_forest = RandomForestRegressor()
 random_forest.fit(X_train, y_train)
@@ -92,9 +88,7 @@ R2 score 0.7141774171081134
 <img src="images/feature_importance_gb.png" alt="">
 </p>
 We can also compare feature importance by model. Note that many of the same features show up in both.
-  </ul>
-</div>
-</section>
+
 
 
 
@@ -136,9 +130,7 @@ results = client.get(database_311, select=select_sql, where=query, limit=100000)
 </code></pre>
 
 ## Findings & Conclusion:
-  <ul class="posts">
-
-    Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
+Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
     <br><br>
     311 seems to recognize this and their web app limits their users to 7 specific complaint types. At the same time it directs more specific inquiries to their respective departments.
     <br><br>
