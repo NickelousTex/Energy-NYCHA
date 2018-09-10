@@ -5,7 +5,7 @@ Capstone Project for Galvanize DSI-FireFox Sept 2018
 
 ## Table of Contents
 
-* [The Data](#The Data)
+* [The Data](#the-data)
 * [Data Munging](#data-munging)
 * [Data Analysis](#early-analysis)
 * [Regression Modeling](#regression-modeling)
