@@ -84,7 +84,7 @@ class PredictionsTable():
 
         pass
     def predict(self):
-        loaded_model = joblib.load('../EDA/random_forest_model.pkl')
+        loaded_model = joblib.load('../EDA/gradient_boost_model.pkl')
 
         self.predictions_data_frame['Predicted_Time_To_Close'] = loaded_model.predict(self.data_frame)
 
