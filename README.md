@@ -1,7 +1,7 @@
 # NYCHA_311_Data_Analysis
 Capstone Project for Galvanize DSI-FireFox Sept 2018 
 
-# Studying Belief Revision on Twitter
+# Regression Predictions on NYC 311 Data
 
 ## Table of Contents
 
@@ -11,8 +11,8 @@ Capstone Project for Galvanize DSI-FireFox Sept 2018
 * [Regression Modeling](#regression-modeling)
 * [Daily Predictions](#daily-predictions)
 * [Dashboards](#data-dashboards)
-* [Findings](#findings-&-conclusion)
-*
+* [Conclusion](#conclusion)
+
 
 
 ## The Data:
@@ -129,7 +129,7 @@ query = "created_date > '{}' AND complaint_type LIKE '%Homeless%' ".format(time_
 results = client.get(database_311, select=select_sql, where=query, limit=100000)
 </code></pre>
 
-## Findings & Conclusion:
+## Conclusion:
 Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
     <br><br>
     311 seems to recognize this and their web app limits their users to 7 specific complaint types. At the same time it directs more specific inquiries to their respective departments.
