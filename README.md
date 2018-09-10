@@ -57,8 +57,8 @@ Number of Community Boards: 59</code></pre>
 
 
 ## Early Analysis
+<img src="images/initial_data_dashboard.png" alt=""> 
 
--- add PNG of dashboards.
 
 
 
