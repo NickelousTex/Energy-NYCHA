@@ -91,7 +91,7 @@ We can also compare feature importance by model. Note that many of the same feat
 
 ## Daily Predictions
 
-Every morning at 02:30AM predictions are generated via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
+Every morning at 02:30AM predictions are generated via an AWS EC2 instance for the previous days calls. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
 <br>
 <h2>Today's predictions</h2>
 <iframe width="900" height="400" frameborder="0" scrolling="yes" src="predictions_table.html"></iframe>
