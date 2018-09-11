@@ -141,7 +141,7 @@ def drop_cols(df, del_cols):
     for col in (set(df.columns) - del_cols):
         df.drop([col], axis=1,inplace=True)
 
-    length_missing_cols = (df.shape[1] - 935) #hardcoded to model
+    length_missing_cols = (df.shape[1] - 383) #hardcoded to model
 
     for i in range(-length_missing_cols):
         df['{}'.format(i)]= 0

@@ -82,11 +82,11 @@ Number of Community Boards: 59</code></pre>
 We can see a breakdown of calls by Borough, by agency, and by complaint type:
 <div>
   <!--undo-->
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:22/embed"></iframe>
+<iframe width= 100% height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:22/embed"></iframe>
 </div>
 <div>
-    <a href="https://plot.ly/~nickeloustex/20/?share_key=GY2HJXWzc5rtvlkI1xLVu8" target="_blank" title="histogram" style="display: block; "><img src="https://plot.ly/~nickeloustex/20.png?share_key=GY2HJXWzc5rtvlkI1xLVu8" alt="histogram" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="nickeloustex:20" sharekey-plotly="GY2HJXWzc5rtvlkI1xLVu8" src="https://plot.ly/embed.js" async></script>style=left;width:180px;height:140px;
+    <a href="https://plot.ly/~nickeloustex/20/?share_key=GY2HJXWzc5rtvlkI1xLVu8" target="_blank" title="histogram" style="display: block; "><img src="https://plot.ly/~nickeloustex/20.png?share_key=GY2HJXWzc5rtvlkI1xLVu8" alt="histogram" style="max-width: 100% height = 400"  onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="nickeloustex:20" sharekey-plotly="GY2HJXWzc5rtvlkI1xLVu8" src="https://plot.ly/embed.js" async></script>
 </div>
 
 
@@ -134,9 +134,9 @@ We can also compare feature importance by model. Note that many of the same feat
 Predictions are generated every morning at 2:30 in the morning via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
 <br>
 <h2>Today's predictions</h2>
-<iframe width="900" height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
+<iframe width= 100% height="400" frameborder="0" scrolling="yes" src="docs/predictions_guesses.html"></iframe>
 <h2>Current Comparision Results:</h2>
-<iframe width="900" height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
+<iframe width= 100% height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
 <br>
 <h2>Results:</h2>
 As you can see results can be hours off, while R*2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
@@ -161,7 +161,7 @@ As you can see results can be hours off, while R*2 score is still at .77. Scorin
     With this in mind, I set out to create example dashboards that are updated daily - using SodaPy and querying Open Data’s own information. This gave me an advantage of minimal storage locally, and thus giving me more space to create impactful maps to visualize interesting data.
 
 <!-- undo-->
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:10/embed"></iframe>
+<iframe width= 100% height="800" frameborder="0" scrolling="no" src="//plot.ly/dashboard/nickeloustex:10/embed"></iframe>
 
 <br>
 <br>

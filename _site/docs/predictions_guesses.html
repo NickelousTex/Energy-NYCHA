@@ -1,0 +1,1761 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>agency</th>
+      <th>borough</th>
+      <th>community_board</th>
+      <th>complaint_type</th>
+      <th>created_date</th>
+      <th>descriptor</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>open_data_channel_type</th>
+      <th>status</th>
+      <th>unique_key</th>
+      <th>Predicted_Time_To_Close</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 00:00:40</td>
+      <td>Loud Music/Party</td>
+      <td>40.75812799455369</td>
+      <td>-73.91722104795207</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40236079</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DSNY</td>
+      <td>BROOKLYN</td>
+      <td>08 BROOKLYN</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 00:01:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.679131322661945</td>
+      <td>-73.96679857550093</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231971</td>
+      <td>800.323000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>05 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:04:12</td>
+      <td>Loud Music/Party</td>
+      <td>40.84950560755094</td>
+      <td>-73.90667932595302</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40235687</td>
+      <td>891.010000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 00:04:22</td>
+      <td>Loud Music/Party</td>
+      <td>40.75812799455369</td>
+      <td>-73.91722104795207</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234774</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>05 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:04:37</td>
+      <td>No Access</td>
+      <td>40.72246377053218</td>
+      <td>-73.90782046759523</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235341</td>
+      <td>81.593000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>DOT</td>
+      <td>BROOKLYN</td>
+      <td>01 BROOKLYN</td>
+      <td>Street Light Condition</td>
+      <td>2018-09-10 00:05:00</td>
+      <td>Traffic Signal Light</td>
+      <td>40.728995173780405</td>
+      <td>-73.95066030723899</td>
+      <td>UNKNOWN</td>
+      <td>Assigned</td>
+      <td>40234542</td>
+      <td>931.166000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>TLC</td>
+      <td>MANHATTAN</td>
+      <td>06 MANHATTAN</td>
+      <td>Taxi Complaint</td>
+      <td>2018-09-10 00:05:16</td>
+      <td>Driver Complaint</td>
+      <td>40.741566730493744</td>
+      <td>-73.97992118183332</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40235361</td>
+      <td>234.072000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>DSNY</td>
+      <td>QUEENS</td>
+      <td>10 QUEENS</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 00:06:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.67295806657775</td>
+      <td>-73.84746559667151</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234452</td>
+      <td>31.856000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>10 BRONX</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:06:24</td>
+      <td>Partial Access</td>
+      <td>40.8252560470113</td>
+      <td>-73.82250304396757</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233141</td>
+      <td>958.655000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>05 BRONX</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 00:06:55</td>
+      <td>Blocked Hydrant</td>
+      <td>40.85538723207412</td>
+      <td>-73.91336221539305</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40232045</td>
+      <td>926.180000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:08:12</td>
+      <td>Loud Music/Party</td>
+      <td>40.83353384969418</td>
+      <td>-73.91334008081198</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40233060</td>
+      <td>934.704000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>18 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:08:47</td>
+      <td>Loud Music/Party</td>
+      <td>40.6047832280327</td>
+      <td>-73.91378465946437</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40233756</td>
+      <td>1183.159000</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 00:09:28</td>
+      <td>Loud Music/Party</td>
+      <td>40.75812799455369</td>
+      <td>-73.91722104795207</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40235390</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>DOT</td>
+      <td>BROOKLYN</td>
+      <td>10 BROOKLYN</td>
+      <td>Street Condition</td>
+      <td>2018-09-10 00:10:20</td>
+      <td>Failed Street Repair</td>
+      <td>40.630325418987404</td>
+      <td>-74.02623116335641</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40231744</td>
+      <td>907.034000</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>06 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:10:26</td>
+      <td>Banging/Pounding</td>
+      <td>40.7159278820591</td>
+      <td>-73.85413098236037</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234383</td>
+      <td>791.418000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 00:13:19</td>
+      <td>Loud Music/Party</td>
+      <td>40.75812799455369</td>
+      <td>-73.91722104795207</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234773</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>DPR</td>
+      <td>STATEN ISLAND</td>
+      <td>02 STATEN ISLAND</td>
+      <td>New Tree Request</td>
+      <td>2018-09-10 00:14:27</td>
+      <td>For One Address</td>
+      <td>40.58814784665987</td>
+      <td>-74.1936878916346</td>
+      <td>OTHER</td>
+      <td>Open</td>
+      <td>40233533</td>
+      <td>1451.635000</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>06 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:14:32</td>
+      <td>Loud Music/Party</td>
+      <td>40.734414647623055</td>
+      <td>-73.85260388451316</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234394</td>
+      <td>761.173000</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>TLC</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Taxi Complaint</td>
+      <td>2018-09-10 00:16:22</td>
+      <td>Driver Complaint</td>
+      <td>40.76171068375754</td>
+      <td>-73.92230640614484</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40236013</td>
+      <td>269.725000</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>06 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:16:30</td>
+      <td>Banging/Pounding</td>
+      <td>40.84235971872979</td>
+      <td>-73.89244589834122</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234956</td>
+      <td>928.815000</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>09 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:16:30</td>
+      <td>Loud Television</td>
+      <td>40.66387461445913</td>
+      <td>-73.9427064868849</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232277</td>
+      <td>1164.559000</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 00:16:43</td>
+      <td>Loud Music/Party</td>
+      <td>40.75812799455369</td>
+      <td>-73.91722104795207</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234864</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>Noise - Street/Sidewalk</td>
+      <td>2018-09-10 00:16:48</td>
+      <td>Loud Music/Party</td>
+      <td>40.83341008197719</td>
+      <td>-73.91300055560558</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233516</td>
+      <td>938.928000</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>06 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:17:16</td>
+      <td>Loud Music/Party</td>
+      <td>40.85018459258685</td>
+      <td>-73.89213684879469</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235729</td>
+      <td>920.131000</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>01 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:17:23</td>
+      <td>Loud Music/Party</td>
+      <td>40.814674509013855</td>
+      <td>-73.91653656075259</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40234310</td>
+      <td>934.812000</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>13 BROOKLYN</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 00:18:00</td>
+      <td>Commercial Overnight Parking</td>
+      <td>40.57992576653164</td>
+      <td>-73.97508101973075</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40231366</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>DSNY</td>
+      <td>QUEENS</td>
+      <td>05 QUEENS</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 00:19:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.70676406085217</td>
+      <td>-73.9048557304081</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233732</td>
+      <td>31.856000</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>01 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:19:01</td>
+      <td>Loud Music/Party</td>
+      <td>40.77455971342006</td>
+      <td>-73.9157672570782</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231826</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>DSNY</td>
+      <td>QUEENS</td>
+      <td>08 QUEENS</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 00:21:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.737291053394564</td>
+      <td>-73.77595343460324</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233731</td>
+      <td>31.856000</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>03 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:22:08</td>
+      <td>No Access</td>
+      <td>40.75950394430216</td>
+      <td>-73.86567315545669</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235319</td>
+      <td>82.442000</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>17 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:23:31</td>
+      <td>Partial Access</td>
+      <td>40.650627002086146</td>
+      <td>-73.93509586010552</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233368</td>
+      <td>1149.559000</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>17 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:25:43</td>
+      <td>Loud Music/Party</td>
+      <td>40.63916167726294</td>
+      <td>-73.93947404767583</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233676</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:27:01</td>
+      <td>Banging/Pounding</td>
+      <td>40.85567264311442</td>
+      <td>-73.92941920512644</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232438</td>
+      <td>503.872000</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>01 BRONX</td>
+      <td>Animal Abuse</td>
+      <td>2018-09-10 00:28:05</td>
+      <td>Neglected</td>
+      <td>40.806383864783406</td>
+      <td>-73.91438323833017</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40231734</td>
+      <td>3500.786944</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>18 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:28:32</td>
+      <td>No Access</td>
+      <td>40.63804052435921</td>
+      <td>-73.88412776457896</td>
+      <td>MOBILE</td>
+      <td>Assigned</td>
+      <td>40232672</td>
+      <td>142.475000</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>09 BRONX</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 00:32:08</td>
+      <td>Blocked Sidewalk</td>
+      <td>40.83873633020774</td>
+      <td>-73.86827425551556</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232117</td>
+      <td>969.874000</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:32:38</td>
+      <td>Banging/Pounding</td>
+      <td>40.70950186808231</td>
+      <td>-73.78105332294952</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232417</td>
+      <td>813.791000</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>TLC</td>
+      <td>BRONX</td>
+      <td>12 BRONX</td>
+      <td>Taxi Complaint</td>
+      <td>2018-09-10 00:32:54</td>
+      <td>Driver Complaint</td>
+      <td>40.90551815277013</td>
+      <td>-73.8486285097589</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40232281</td>
+      <td>313.950000</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>09 MANHATTAN</td>
+      <td>Animal Abuse</td>
+      <td>2018-09-10 00:33:31</td>
+      <td>Other (complaint details)</td>
+      <td>40.814467344446236</td>
+      <td>-73.9530427089908</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40233012</td>
+      <td>587.772000</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>07 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:34:28</td>
+      <td>Loud Music/Party</td>
+      <td>40.798168627038706</td>
+      <td>-73.96737126543621</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40233061</td>
+      <td>529.870000</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>14 BROOKLYN</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 00:35:00</td>
+      <td>Blocked Hydrant</td>
+      <td>40.611306415360204</td>
+      <td>-73.96261476339647</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40235243</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>10 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:37:08</td>
+      <td>No Access</td>
+      <td>40.67785636538952</td>
+      <td>-73.84868739211022</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233922</td>
+      <td>82.442000</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>10 BRONX</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:38:17</td>
+      <td>No Access</td>
+      <td>40.83955015033507</td>
+      <td>-73.85134818072878</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40231454</td>
+      <td>118.645000</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>NYPD</td>
+      <td>STATEN ISLAND</td>
+      <td>02 STATEN ISLAND</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 00:38:23</td>
+      <td>Double Parked Blocking Traffic</td>
+      <td>40.58010200232724</td>
+      <td>-74.15638671464042</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40231539</td>
+      <td>1048.227000</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:41:16</td>
+      <td>No Access</td>
+      <td>40.68901041806259</td>
+      <td>-73.87060375231205</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234641</td>
+      <td>118.645000</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>NYPD</td>
+      <td>STATEN ISLAND</td>
+      <td>03 STATEN ISLAND</td>
+      <td>Noise - Vehicle</td>
+      <td>2018-09-10 00:43:31</td>
+      <td>Engine Idling</td>
+      <td>40.57122134219598</td>
+      <td>-74.12859215127756</td>
+      <td>MOBILE</td>
+      <td>Assigned</td>
+      <td>40234250</td>
+      <td>1049.248000</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>04 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:44:35</td>
+      <td>Loud Music/Party</td>
+      <td>40.7398905544843</td>
+      <td>-73.85705202007404</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40233703</td>
+      <td>833.173000</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:49:53</td>
+      <td>Banging/Pounding</td>
+      <td>40.852559532584834</td>
+      <td>-73.93298662744454</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233132</td>
+      <td>773.532000</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:51:56</td>
+      <td>No Access</td>
+      <td>40.686392140684575</td>
+      <td>-73.87081435915732</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232140</td>
+      <td>118.645000</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>09 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:52:15</td>
+      <td>Banging/Pounding</td>
+      <td>40.82441607894933</td>
+      <td>-73.87725611053246</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234336</td>
+      <td>952.815000</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>10 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 00:52:57</td>
+      <td>Partial Access</td>
+      <td>40.625626230628356</td>
+      <td>-74.00904931220163</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235234</td>
+      <td>1149.559000</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>08 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:53:51</td>
+      <td>Loud Music/Party</td>
+      <td>40.67223833950553</td>
+      <td>-73.9286688297185</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40232450</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>03 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:57:02</td>
+      <td>Loud Music/Party</td>
+      <td>40.7695071949206</td>
+      <td>-73.87171814867921</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40231223</td>
+      <td>823.573000</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>13 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:57:20</td>
+      <td>Banging/Pounding</td>
+      <td>40.577996109228</td>
+      <td>-73.99793727781298</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233706</td>
+      <td>1196.822000</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 00:57:32</td>
+      <td>Banging/Pounding</td>
+      <td>40.85567264311442</td>
+      <td>-73.92941920512644</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40235613</td>
+      <td>773.532000</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>DOT</td>
+      <td>STATEN ISLAND</td>
+      <td>01 STATEN ISLAND</td>
+      <td>Traffic Signal Condition</td>
+      <td>2018-09-10 00:59:00</td>
+      <td>Controller</td>
+      <td>40.61564330181599</td>
+      <td>-74.06728339489601</td>
+      <td>UNKNOWN</td>
+      <td>Open</td>
+      <td>40234182</td>
+      <td>258.860000</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>DOHMH</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Rodent</td>
+      <td>2018-09-10 01:00:40</td>
+      <td>Condition Attracting Rodents</td>
+      <td>40.66792971635196</td>
+      <td>-73.88814917548649</td>
+      <td>ONLINE</td>
+      <td>Pending</td>
+      <td>40233711</td>
+      <td>846.100000</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:01:31</td>
+      <td>No Access</td>
+      <td>40.68901041806259</td>
+      <td>-73.87060375231205</td>
+      <td>MOBILE</td>
+      <td>Assigned</td>
+      <td>40232687</td>
+      <td>131.212000</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>DCA</td>
+      <td>MANHATTAN</td>
+      <td>05 MANHATTAN</td>
+      <td>Consumer Complaint</td>
+      <td>2018-09-10 01:05:04</td>
+      <td>Exchange/Refund/Return</td>
+      <td>40.755008858572324</td>
+      <td>-73.98771710887013</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40232843</td>
+      <td>186.846000</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>NYPD</td>
+      <td>STATEN ISLAND</td>
+      <td>01 STATEN ISLAND</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:06:40</td>
+      <td>Loud Television</td>
+      <td>40.63212358684657</td>
+      <td>-74.16468695295232</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40232043</td>
+      <td>1061.838000</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>04 QUEENS</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 01:07:23</td>
+      <td>Blocked Sidewalk</td>
+      <td>40.74040425231424</td>
+      <td>-73.887089261554</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40231488</td>
+      <td>811.484000</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>DOHMH</td>
+      <td>MANHATTAN</td>
+      <td>06 MANHATTAN</td>
+      <td>Rodent</td>
+      <td>2018-09-10 01:08:03</td>
+      <td>Signs of Rodents</td>
+      <td>40.759439235009246</td>
+      <td>-73.96348818371523</td>
+      <td>ONLINE</td>
+      <td>Pending</td>
+      <td>40232858</td>
+      <td>142.247000</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>DPR</td>
+      <td>QUEENS</td>
+      <td>02 QUEENS</td>
+      <td>Damaged Tree</td>
+      <td>2018-09-10 01:09:24</td>
+      <td>Branch or Limb Has Fallen Down</td>
+      <td>40.74890988518218</td>
+      <td>-73.90832523954683</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40233008</td>
+      <td>280.364000</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:09:59</td>
+      <td>Loud Music/Party</td>
+      <td>40.83459587654889</td>
+      <td>-73.9291596922045</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233752</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>10 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:11:50</td>
+      <td>Banging/Pounding</td>
+      <td>40.81157162558579</td>
+      <td>-73.9466470174785</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40231328</td>
+      <td>523.806000</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>13 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:14:20</td>
+      <td>No Access</td>
+      <td>40.65020646306731</td>
+      <td>-73.73540790514123</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40231537</td>
+      <td>86.978000</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Derelict Vehicle</td>
+      <td>2018-09-10 01:16:26</td>
+      <td>With License Plate</td>
+      <td>40.6866855126532</td>
+      <td>-73.80124467587062</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40233181</td>
+      <td>772.323000</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>DSNY</td>
+      <td>QUEENS</td>
+      <td>05 QUEENS</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 01:17:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.71845313712968</td>
+      <td>-73.90380731232267</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235582</td>
+      <td>27.801000</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:17:00</td>
+      <td>Loud Music/Party</td>
+      <td>40.85724677644806</td>
+      <td>-73.9272846965138</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40234967</td>
+      <td>680.571000</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>03 BROOKLYN</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 01:17:02</td>
+      <td>Banging/Pounding</td>
+      <td>40.68290569745191</td>
+      <td>-73.94035735919954</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40235437</td>
+      <td>1196.822000</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>03 BROOKLYN</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 01:19:30</td>
+      <td>Loud Talking</td>
+      <td>40.68290569745191</td>
+      <td>-73.94035735919954</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40236152</td>
+      <td>1232.890000</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:20:04</td>
+      <td>Loud Music/Party</td>
+      <td>40.8614995374538</td>
+      <td>-73.92924672138538</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40235039</td>
+      <td>680.571000</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>12 BRONX</td>
+      <td>Noise - Street/Sidewalk</td>
+      <td>2018-09-10 01:21:32</td>
+      <td>Loud Music/Party</td>
+      <td>40.8758744189505</td>
+      <td>-73.84988565999234</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40236039</td>
+      <td>928.095000</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>12 BROOKLYN</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 01:22:28</td>
+      <td>Blocked Hydrant</td>
+      <td>40.64330138247508</td>
+      <td>-73.98059936173449</td>
+      <td>MOBILE</td>
+      <td>Assigned</td>
+      <td>40232147</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:22:45</td>
+      <td>Loud Music/Party</td>
+      <td>40.8239715266158</td>
+      <td>-73.91744264545436</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40235688</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>03 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:26:17</td>
+      <td>Banging/Pounding</td>
+      <td>40.83141332709677</td>
+      <td>-73.90111088433824</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234984</td>
+      <td>948.190000</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>DPR</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Illegal Tree Damage</td>
+      <td>2018-09-10 01:27:19</td>
+      <td>Unauthorized Tree Removal</td>
+      <td>40.869401747041415</td>
+      <td>-73.91720907636861</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40233641</td>
+      <td>196.793000</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>NYPD</td>
+      <td>STATEN ISLAND</td>
+      <td>01 STATEN ISLAND</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:27:44</td>
+      <td>Banging/Pounding</td>
+      <td>40.64390243266814</td>
+      <td>-74.08186971257727</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234949</td>
+      <td>1050.980000</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>12 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:27:52</td>
+      <td>Loud Music/Party</td>
+      <td>40.87245486381589</td>
+      <td>-73.84804570059887</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40233124</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>12 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:28:24</td>
+      <td>Loud Music/Party</td>
+      <td>40.8736111903149</td>
+      <td>-73.84866137246155</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40235745</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>07 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:33:21</td>
+      <td>Loud Talking</td>
+      <td>40.7580778042447</td>
+      <td>-73.80994015488844</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40233992</td>
+      <td>778.998000</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>17 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:34:09</td>
+      <td>Loud Music/Party</td>
+      <td>40.65074016626262</td>
+      <td>-73.91879940942533</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233729</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>04 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:34:42</td>
+      <td>Banging/Pounding</td>
+      <td>40.748177830237246</td>
+      <td>-74.0013389613079</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233802</td>
+      <td>523.806000</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>12 BROOKLYN</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 01:35:03</td>
+      <td>Commercial Overnight Parking</td>
+      <td>40.630781153248265</td>
+      <td>-73.99416360744151</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231506</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>02 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:35:25</td>
+      <td>Loud Music/Party</td>
+      <td>40.75124943790316</td>
+      <td>-73.90287930314746</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235801</td>
+      <td>805.655000</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:36:57</td>
+      <td>Loud Music/Party</td>
+      <td>40.686108427994924</td>
+      <td>-73.78410845255219</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233011</td>
+      <td>772.323000</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:38:01</td>
+      <td>No Access</td>
+      <td>40.68220378783633</td>
+      <td>-73.76509486219668</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235261</td>
+      <td>102.425000</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>DSNY</td>
+      <td>BROOKLYN</td>
+      <td>06 BROOKLYN</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 01:39:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.68579767483004</td>
+      <td>-74.00037138544045</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233851</td>
+      <td>1367.919000</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>TLC</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>For Hire Vehicle Complaint</td>
+      <td>2018-09-10 01:39:13</td>
+      <td>Driver Complaint</td>
+      <td>40.8364118892004</td>
+      <td>-73.92332500814966</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40232184</td>
+      <td>322.984000</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>12 BRONX</td>
+      <td>Noise - Street/Sidewalk</td>
+      <td>2018-09-10 01:41:17</td>
+      <td>Loud Music/Party</td>
+      <td>40.8758744189505</td>
+      <td>-73.84988565999234</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40234809</td>
+      <td>928.095000</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>03 MANHATTAN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:41:31</td>
+      <td>Banging/Pounding</td>
+      <td>40.71278535705639</td>
+      <td>-73.98075949492052</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40235791</td>
+      <td>523.806000</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>10 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:43:32</td>
+      <td>Banging/Pounding</td>
+      <td>40.63610348604493</td>
+      <td>-74.02493635498617</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40232419</td>
+      <td>1196.822000</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>14 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:44:28</td>
+      <td>Loud Music/Party</td>
+      <td>40.59342870538089</td>
+      <td>-73.78610763253943</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40235001</td>
+      <td>801.993000</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>13 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:45:35</td>
+      <td>Loud Music/Party</td>
+      <td>40.71190508292332</td>
+      <td>-73.74450541080883</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234926</td>
+      <td>805.655000</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>05 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:47:20</td>
+      <td>Banging/Pounding</td>
+      <td>40.70391409631965</td>
+      <td>-73.9071175707685</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233108</td>
+      <td>874.403000</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:48:37</td>
+      <td>No Access</td>
+      <td>40.68170373676041</td>
+      <td>-73.88890124779012</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234576</td>
+      <td>131.212000</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>DSNY</td>
+      <td>QUEENS</td>
+      <td>13 QUEENS</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 01:50:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.69408186071729</td>
+      <td>-73.74265163340903</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231990</td>
+      <td>25.361000</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>10 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:51:43</td>
+      <td>Banging/Pounding</td>
+      <td>40.840092252251004</td>
+      <td>-73.84613189258317</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233696</td>
+      <td>948.190000</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>05 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:52:38</td>
+      <td>Banging/Pounding</td>
+      <td>40.682724130578684</td>
+      <td>-73.86993450668331</td>
+      <td>MOBILE</td>
+      <td>Assigned</td>
+      <td>40235025</td>
+      <td>1196.822000</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>10 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:53:14</td>
+      <td>Loud Music/Party</td>
+      <td>40.685540094472</td>
+      <td>-73.8190312959881</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40232501</td>
+      <td>805.655000</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>05 QUEENS</td>
+      <td>Noise - Commercial</td>
+      <td>2018-09-10 01:57:03</td>
+      <td>Loud Music/Party</td>
+      <td>40.704762557943226</td>
+      <td>-73.91100803041978</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40231881</td>
+      <td>870.219000</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>11 BROOKLYN</td>
+      <td>Illegal Parking</td>
+      <td>2018-09-10 01:57:12</td>
+      <td>Blocked Hydrant</td>
+      <td>40.61131522178045</td>
+      <td>-74.0020421417446</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40232039</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:58:25</td>
+      <td>No Access</td>
+      <td>40.68812036989781</td>
+      <td>-73.79156238010822</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235842</td>
+      <td>102.425000</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>01 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 01:59:56</td>
+      <td>Banging/Pounding</td>
+      <td>40.812541908846605</td>
+      <td>-73.90933219354666</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233667</td>
+      <td>957.743000</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>18 BROOKLYN</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 01:59:57</td>
+      <td>No Access</td>
+      <td>40.635584365251745</td>
+      <td>-73.89015620149142</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40234620</td>
+      <td>135.719000</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Vehicle</td>
+      <td>2018-09-10 02:01:45</td>
+      <td>Car/Truck Music</td>
+      <td>40.87130497520482</td>
+      <td>-73.9188337917223</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40231854</td>
+      <td>408.536000</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>DHS</td>
+      <td>MANHATTAN</td>
+      <td>04 MANHATTAN</td>
+      <td>Homeless Person Assistance</td>
+      <td>2018-09-10 02:04:12</td>
+      <td>N/A</td>
+      <td>40.762892418533454</td>
+      <td>-73.99997473099776</td>
+      <td>MOBILE</td>
+      <td>Open</td>
+      <td>40235468</td>
+      <td>496.409000</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>03 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 02:05:07</td>
+      <td>Loud Music/Party</td>
+      <td>40.822617687361564</td>
+      <td>-73.91277258794514</td>
+      <td>ONLINE</td>
+      <td>Assigned</td>
+      <td>40234362</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>12 MANHATTAN</td>
+      <td>Noise - Vehicle</td>
+      <td>2018-09-10 02:05:45</td>
+      <td>Car/Truck Music</td>
+      <td>40.87130497520482</td>
+      <td>-73.9188337917223</td>
+      <td>ONLINE</td>
+      <td>Open</td>
+      <td>40233976</td>
+      <td>678.196000</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>NYPD</td>
+      <td>BRONX</td>
+      <td>03 BRONX</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 02:06:13</td>
+      <td>Loud Music/Party</td>
+      <td>40.822617687361564</td>
+      <td>-73.91277258794514</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40235027</td>
+      <td>913.279000</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Blocked Driveway</td>
+      <td>2018-09-10 02:08:16</td>
+      <td>No Access</td>
+      <td>40.69629495420414</td>
+      <td>-73.79191548103314</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231455</td>
+      <td>93.888000</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>NYPD</td>
+      <td>BROOKLYN</td>
+      <td>13 BROOKLYN</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 02:08:27</td>
+      <td>Loud Music/Party</td>
+      <td>40.579190102354815</td>
+      <td>-73.99816403643676</td>
+      <td>PHONE</td>
+      <td>Open</td>
+      <td>40232471</td>
+      <td>1166.577000</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>NYPD</td>
+      <td>MANHATTAN</td>
+      <td>02 MANHATTAN</td>
+      <td>Noise - Vehicle</td>
+      <td>2018-09-10 02:09:07</td>
+      <td>Car/Truck Music</td>
+      <td>40.718092564972125</td>
+      <td>-73.99772010359993</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40232937</td>
+      <td>684.723000</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>NYPD</td>
+      <td>QUEENS</td>
+      <td>12 QUEENS</td>
+      <td>Noise - Residential</td>
+      <td>2018-09-10 02:12:44</td>
+      <td>Loud Music/Party</td>
+      <td>40.686108427994924</td>
+      <td>-73.78410845255219</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40231825</td>
+      <td>749.754000</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>DOT</td>
+      <td>BRONX</td>
+      <td>04 BRONX</td>
+      <td>Street Condition</td>
+      <td>2018-09-10 02:19:52</td>
+      <td>Pothole</td>
+      <td>40.83971718619205</td>
+      <td>-73.91638226564193</td>
+      <td>UNKNOWN</td>
+      <td>Open</td>
+      <td>40233889</td>
+      <td>322.984000</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>DSNY</td>
+      <td>BROOKLYN</td>
+      <td>06 BROOKLYN</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>2018-09-10 02:36:00</td>
+      <td>Request Large Bulky Item Collection</td>
+      <td>40.66921219767373</td>
+      <td>-73.98109649531109</td>
+      <td>PHONE</td>
+      <td>Assigned</td>
+      <td>40233815</td>
+      <td>1367.919000</td>
+    </tr>
+  </tbody>
+</table>
