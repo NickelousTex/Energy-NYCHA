@@ -1,5 +1,5 @@
 # Regression Predictions on NYC 311 Data
-A more responsive version can be found on [GitHub Pages](https://nickeloustex.github.io/NYCHA_311_Capstone/)
+A more responsive version can be found on [GitHub Pages](https://nickeloustex.github.io/NYC-311-Regression-Predicting/)
 ## Table of Contents
 
 * [The Data](#the-data)
