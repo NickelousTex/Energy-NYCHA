@@ -21,9 +21,9 @@ As part of the open data project, New York City post data from a variety of Depa
     311 use in NYC has seen explosive growth since tracking was first introduced in 2003. Growing from approximately 4.5 Million calls in its first year to over 20 million calls per year.
 <br><br>
     <b>Why look at 311?</b>
-    311 is a unique attempt by governments to be more responsive to their citizens concerns. 311 complaints vary widely from noise complaints to mental health services. Yet many people have never used 311. Often the response is "it won't get fixed anyways, what's the point?"
+    311 is a unique attempt by governments to be more responsive to their citizens concerns. 311 complaints vary widely from noise complaints to mental health services. Yet many people have never used 311. Often the response is "it won't get fixed, what's the point?"
 <br><br>
-    This project seeks to identify exactly causes a 311 complaint to be responded to faster than another. The project will attempt to predict new 311 calls close time to answer a fundamental question: <b>Can 311 Fix It?</b>
+    This project seeks to identify features that cause a 311 complaint to be responded to faster vs another. The project will attempt to predict new 311 calls close time to answer a fundamental question: <b>Can 311 Fix It?</b>
 
 All of my code can be found within the [scripts folder](scripts/) in this repository.
 Notebooks of my progress and analysis can be found in the [EDA folder](EDA/). 
@@ -31,7 +31,7 @@ Notebooks of my progress and analysis can be found in the [EDA folder](EDA/).
 
 ## Data Munging 
 
-  As with most open data sets, there's a lot to explore and look through. With over 18 million rows and 41 features in just the past year, there was a lot to look through and make decisions on. A subset of 100k was worked on initially for cleaning before deploying on the larger data set. What was needed to figure out was-
+As with most open data sets, there's a lot to explore and look through. With over 18 million rows and 41 features in just the past year, there was a lot to look through and make decisions on. A subset of 100k was worked on initially for cleaning before deploying on the larger data set. What was needed to figure out was-
 
 <br>
 <div>
@@ -91,7 +91,7 @@ We can also compare feature importance by model. Note that many of the same feat
 
 ## Daily Predictions
 
-Predictions are generated every morning at 2:30 in the morning via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
+Every morning at 02:30AM predictions are generated via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
 <br>
 <h2>Today's predictions</h2>
 <iframe width="900" height="400" frameborder="0" scrolling="yes" src="predictions_table.html"></iframe>
@@ -99,7 +99,7 @@ Predictions are generated every morning at 2:30 in the morning via an AWS EC2 in
 <iframe width="900" height="400" frameborder="0" scrolling="yes" src="predictions_table.html"></iframe>
 <br>
 <h2>Results:</h2>
-As you can see results can be hours off, while R*2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
+As you can see results can be hours off, while R^2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
 
 
 ## Data Dashboarding
@@ -127,7 +127,7 @@ results = client.get(database_311, select=select_sql, where=query, limit=100000)
 </code></pre>
 
 ## Conclusion:
-Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
+Regression prediction is hard on a large data set as 311. Auto-closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
     <br><br>
     311 seems to recognize this and their web app limits their users to 7 specific complaint types. At the same time it directs more specific inquiries to their respective departments.
     <br><br>
