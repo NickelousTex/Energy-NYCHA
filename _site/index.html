@@ -24,16 +24,16 @@
   <h1>The Data:</h1>
   <ul class="posts">
 
-    As part of the open data project, New York City post data from a variety of Departments and other Government Entities. This project takes data from the NYC 311 Open Data set and attempts to predict future outcome of complaints.
+    As part of the open data project, New York City posts data from a variety of Departments and other Government Entities. This project takes data from the NYC 311 Open Data set and attempts to predict future time-to-close outcome of complaints.
 <br><br>
     <b>What is 311?</b>
     311 was introduced as a non-emergency alternative to 911 in 1996 to help overwhelmed police emergency calls by providing citizens with an alternative three digit call number to voice complaints.
     311 use in NYC has seen explosive growth since tracking was first introduced in 2003. Growing from approximately 4.5 Million calls in its first year to over 20 million calls per year.
 <br><br>
     <b>Why look at 311?</b>
-    311 is a unique attempt by governments to be more responsive to their citizens concerns. 311 complaints vary widely from noise complaints to mental health services. Yet many people have never used 311. Often the response is "it won't get fixed anyways, what's the point?"
+    311 is a unique attempt by governments to be more responsive to their citizens concerns. 311 complaints vary widely from noise complaints to mental health services. Yet many people have never used 311. Often the response is "it won't get fixed, what's the point?"
 <br><br>
-    This project seeks to identify exactly causes a 311 complaint to be responded to faster than another. The project will attempt to predict new 311 calls close time to answer a fundamental question: <b>Can 311 Fix It?</b>
+    This project seeks to identify features which cause one 311 complaint to be responded to faster than another. The project will attempt to predict new 311 call close times to answer a fundamental question: <b>Can 311 Fix It?</b>
 
   </ul>
 </div>
@@ -46,7 +46,7 @@
     <section class="main-content">
 
       <div id="home">
-  <h1> Data Mungeing:</h1>
+  <h1> Data Munging:</h1>
   <ul class="posts">
 
     As with most open data sets, there's a lot to explore and look through. With over 18 million rows and 41 features in just the past year, there was a lot to look through and make decisions on. A subset of 100k was worked on initially for cleaning before deploying on the larger data set. What was needed to figure out was-
@@ -77,7 +77,7 @@ Number of Community Boards: 59</code></pre>
     <section class="main-content">
 
       <div id="home">
-  <h1>Early Analyssis:</h1>
+  <h1>Early Analysis:</h1>
   <ul class="posts">
 We can see a breakdown of calls by Borough, by agency, and by complaint type:
 <div>
@@ -131,15 +131,15 @@ We can also compare feature importance by model. Note that many of the same feat
       <div id="home">
   <h1>Current Predictions:</h1>
   <ul class="posts">
-Predictions are generated every morning at 2:30 in the morning via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
+Every morning at 02:30AM predictions are generated on previous days calls via an AWS EC2 instance. Total results are saved to a SQL table. Today's current predictions, as well as previous predictions and their actual times are embeded via HTML.
 <br>
 <h2>Today's predictions</h2>
 <iframe width= 100% height="400" frameborder="0" scrolling="yes" src="docs/predictions_guesses.html"></iframe>
 <h2>Current Comparision Results:</h2>
-<iframe width= 100% height="400" frameborder="0" scrolling="yes" src="docs/predictions_table.html"></iframe>
+<iframe width= 100% height="400" frameborder="0" scrolling="yes" src="docs/actual_close_times.html"></iframe>
 <br>
 <h2>Results:</h2>
-As you can see results can be hours off, while R*2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
+As you can see results can be hours off, while R^2 score is still at .77. Scoring is based on overall model prediction. When an issue that takes a week to resolve prediction also off by 2 days, that is weighted heavily. When an issue is resolved in 3 hours and the prediction was at 6 hours, this is weighted less. This judgment was made because the experience of time. Predictions that are within hours of their actual time to close are within a standard of error from a person’s perspective of time. While predictions that are days off, even if they take weeks to close, are large from a person's perspective.
 
  </div>
 </div>
@@ -182,11 +182,11 @@ results = client.get(database_311, select=select_sql, where=query, limit=100000)
   <h1>Findings & Conclusion:</h1>
   <ul class="posts">
 
-    Regression prediction is hard on a large data set as 311. Auto closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
+    Regression prediction is hard on a large data set as 311. Auto-closes and non-closes are particularly problematic as the sheer number of them can mask the problem. There are plenty of issues with the data. While there does appear to be some standards when it comes to complaint types and descriptions, there also is a significantly large number of one off complaint types.
     <br><br>
     311 seems to recognize this and their web app limits their users to 7 specific complaint types. At the same time it directs more specific inquiries to their respective departments.
     <br><br>
-    Recommendations would still include dealing with the auto close problem. Standardizing complaints down to a core 20-30, or having an “Other” category rather than over 200 descriptors might also be a good way to get more accurate data. It’s also unclear if agencies are responsible or measured by their 311 report performance.
+    Recommendations would still include dealing with the auto-close problem. Standardizing complaints down to a core 20-30, or having an “Other” category rather than over 200 descriptors might also be a good way to get more accurate data. It’s also unclear if agencies are responsible or measured by their 311 report performance.
 
   </ul>
 </div>
