@@ -1,4 +1,5 @@
 # Regression Predictions on NYC 311 Data
+** Note that I have shut down the EC2 nodes that were in place to showcase auto generating some dashboards & data. I have progressed beyond this to using more asyncronous solutions such as Lambda and OpenWhisk. This project is archived and here to remind me how far I've come in my skill sets.
 A more responsive version can be found on [GitHub Pages](https://nickeloustex.github.io/NYC-311-Regression-Predicting/)
 ## Table of Contents
 
